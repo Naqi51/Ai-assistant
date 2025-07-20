@@ -128,9 +128,17 @@ This project is licensed under the MIT License. See `LICENSE` file for details.
 
 > Created with ❤️ by [Mohammad Naqi](https://github.com/naqi51)
 
+✅ requirements.txt
 ```
-
----
-
-Let me know if you want a matching `requirements.txt` or a demo video script for your GitHub too!
+txt
+Copy
+Edit
+speechrecognition
+gtts
+playsound
+requests
+pyautogui
+psutil
+translatepy
+pyaudio
 ```
