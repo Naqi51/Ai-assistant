@@ -1,4 +1,4 @@
- **Jarvis AI Voice Assistant (LLM + Voice + OpenRouter)**:
+   **Jarvis AI Voice Assistant (LLM + Voice + OpenRouter)**:
 
 ---
 
@@ -140,4 +140,9 @@ psutil
 translatepy
 pyaudio
 ```
+👨‍💻 Author
+Mohammad Naqiuddin
+💼 Database Administrator
+📫 [naqidba117@gmail.com]
+
 > Created with ❤️ by [Mohammad Naqi](https://github.com/naqi51)
