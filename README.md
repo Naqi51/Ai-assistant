@@ -1,4 +1,4 @@
-Here’s a `README.md` file tailored for your **Jarvis AI Voice Assistant (LLM + Voice + OpenRouter)** GitHub project:
+Here’s a `README.md` file tailored for your **Jarvis AI Voice Assistant (LLM + Voice + OpenRouter)**:
 
 ---
 
