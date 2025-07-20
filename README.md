@@ -34,11 +34,6 @@ Jarvis is a smart voice-activated personal assistant built using Python. It can 
 
 ---
 
-## 🔧 Setup Instructions
-
-### 1. Clone the repo
-
-
 ````
 
 ### 2. Install dependencies
