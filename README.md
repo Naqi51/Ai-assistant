@@ -33,6 +33,7 @@ Jarvis is a smart voice-activated personal assistant built using Python. It can 
 - [DeepSeek R1 model](https://openrouter.ai/models/deepseek/deepseek-r1)
 
 ---
+
 ### 2. Install dependencies
 
 Make sure you have Python 3.13 installed.
