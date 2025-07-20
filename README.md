@@ -18,7 +18,6 @@ Jarvis is a smart voice-activated personal assistant built using Python. It can 
 - 🕒 Tells time, date, and system info
 - 🌍 Multilingual support with translation
 - 🛑 Voice-controlled STOP (say "stop", "exit", or "goodbye" anytime)
-- 🧠 Ignores casual phrases like “hi”, “hello”, etc.
 - 🧵 Works fully offline except for the LLM API
 
 ---
@@ -112,6 +111,7 @@ jarvis-voice-assistant/
 ---
 
 ✅ requirements.txt
+```
 txt
 Copy
 Edit
@@ -123,8 +123,7 @@ pyautogui
 psutil
 translatepy
 pyaudio
-✅ Tip: If 
-
+```
 ---
 
 > Created with ❤️ by [Mohammad Naqi](https://github.com/naqi51)
