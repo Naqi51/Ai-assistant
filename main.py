@@ -1,7 +1,10 @@
-# Jarvis AI Assistant (OpenRouter Edition with translatepy)
+##updated new code working
+
+# Jarvis AI Assistant (OpenRouter Edition with translatepy, Voice Control, and gTTS for speech)
 
 import speech_recognition as sr
-import pyttsx3
+from gtts import gTTS
+from playsound import playsound
 import requests
 import pyautogui
 import psutil
@@ -19,15 +22,12 @@ class JarvisAI:
     def __init__(self):
         self.recognizer = sr.Recognizer()
         self.microphone = sr.Microphone()
-        self.tts_engine = pyttsx3.init()
         self.translator = Translator()
         self.is_listening = True
 
         # OpenRouter API configuration
-        self.api_key = "My_api_key"  # Replace with your real API key
+        self.api_key = "My_Api"  # 🔑 Replace with your real OpenRouter API key 
         self.api_url = "https://openrouter.ai/api/v1/chat/completions"
-
-        self.setup_tts()
 
         self.language_codes = {
             'english': 'english',
@@ -42,21 +42,16 @@ class JarvisAI:
 
         print("🤖 Jarvis AI Assistant Initialized!")
 
-    def setup_tts(self):
-        voices = self.tts_engine.getProperty('voices')
-        if voices:
-            self.tts_engine.setProperty('voice', voices[0].id)
-        self.tts_engine.setProperty('rate', 150)
-        self.tts_engine.setProperty('volume', 0.8)
-
     def speak(self, text, language='english'):
         try:
             if language != 'english':
                 translated = self.translator.translate(text, destination_language=language)
                 text = translated.result
             print(f"🗣️ Jarvis: {text}")
-            self.tts_engine.say(text)
-            self.tts_engine.runAndWait()
+            tts = gTTS(text=text, lang='en')
+            tts.save("jarvis_voice.mp3")
+            playsound("jarvis_voice.mp3")
+            os.remove("jarvis_voice.mp3")
         except Exception as e:
             print(f"TTS Error: {e}")
 
@@ -89,7 +84,7 @@ class JarvisAI:
             ]
 
             payload = {
-                "model": "mistralai/mixtral-8x7b",
+                "model": "deepseek/deepseek-r1-0528:free",
                 "messages": messages,
                 "temperature": 0.7,
                 "max_tokens": 500
@@ -97,6 +92,8 @@ class JarvisAI:
 
             response = requests.post(self.api_url, headers=headers, json=payload)
             data = response.json()
+
+            print("🔍 Raw API response:", json.dumps(data, indent=2))
 
             if "choices" in data and len(data["choices"]) > 0:
                 return data["choices"][0]["message"]["content"]
@@ -163,7 +160,7 @@ class JarvisAI:
 
         command = command.lower()
 
-        if any(word in command for word in ["exit", "quit", "goodbye"]):
+        if any(word in command for word in ["exit", "quit", "goodbye", "stop"]):
             self.speak("Goodbye! Jarvis signing off.", self.current_language)
             self.is_listening = False
             return
