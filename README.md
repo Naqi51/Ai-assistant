@@ -126,8 +126,6 @@ This project is licensed under the MIT License. See `LICENSE` file for details.
 
 ---
 
-> Created with ❤️ by [Mohammad Naqi](https://github.com/naqi51)
-
 ✅ requirements.txt
 ```
 txt
@@ -142,3 +140,4 @@ psutil
 translatepy
 pyaudio
 ```
+> Created with ❤️ by [Mohammad Naqi](https://github.com/naqi51)
